@@ -11,6 +11,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="v4.css" />
 </head>
 <body>
   <header class="site-header">
@@ -25,7 +26,7 @@
         <a href="#about">About Us</a>
         <a href="#launch">Launch</a>
       </nav>
-      <a class="button button-primary" href="#launch">Stay Tuned</a>
+      <a class="button button-primary" href="#launch">18 Dec 2026</a>
     </div>
   </header>
 
@@ -40,7 +41,7 @@
           <p>Ligeronex is building a new generation of practical AI products designed to bring clarity to complexity, intelligence to everyday work and new possibilities to the organisations of tomorrow.</p>
           <div class="hero-actions">
             <a class="button button-primary" href="#vision">Discover Ligeronex <span>→</span></a>
-            <a class="button button-outline" href="#launch">Stay Tuned</a>
+            <a class="button button-outline" href="#launch">18 December 2026</a>
           </div>
           <div class="trust-row">
             <div><span class="trust-icon">✦</span><span>Practical AI</span></div>
@@ -56,6 +57,20 @@
           <div class="floating-chip chip-one">Light. Intelligence.</div>
           <div class="floating-chip chip-two">Beyond what’s expected</div>
           <div class="floating-orb"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="launch-spotlight" aria-label="Ligeronex launch date">
+      <div class="container launch-inner reveal">
+        <div class="launch-kicker">THE DATE TO REMEMBER</div>
+        <div class="launch-date">18 December 2026</div>
+        <p class="launch-sub">The next chapter of Ligeronex will be revealed.</p>
+        <div class="launch-countdown" aria-live="polite">
+          <div class="countdown-unit"><span class="countdown-number" id="count-days">--</span><span class="countdown-label">Days</span></div>
+          <div class="countdown-unit"><span class="countdown-number" id="count-hours">--</span><span class="countdown-label">Hours</span></div>
+          <div class="countdown-unit"><span class="countdown-number" id="count-minutes">--</span><span class="countdown-label">Minutes</span></div>
+          <div class="countdown-unit"><span class="countdown-number" id="count-seconds">--</span><span class="countdown-label">Seconds</span></div>
         </div>
       </div>
     </section>
@@ -102,12 +117,14 @@
     <section class="product-band" id="launch">
       <div class="container product-band-inner reveal">
         <div>
-          <div class="eyebrow">COMING 18 DECEMBER 2026</div>
+          <div class="eyebrow">LAUNCHING 18 DECEMBER 2026</div>
+          <div class="launch-date-display"><span>Save the date</span>18 December 2026</div>
           <h2>Something new is coming from Ligeronex.</h2>
           <p>We’re working behind the scenes on our next chapter. We’re not revealing the details just yet — but we’re building practical AI products designed to make organisations more connected, capable and ready for what’s next.</p>
+          <div class="launch-pill">The reveal is coming</div>
         </div>
         <div class="product-meta"><span>Built around real problems</span><span>Human-centred by design</span><span>Practical AI with purpose</span></div>
-        <a class="button button-primary" href="mailto:hello@ligeronex.com?subject=Ligeronex%20Launch">Keep Me Informed</a>
+        <a class="button button-primary" href="mailto:hello@ligeronex.com?subject=Ligeronex%20Launch">Stay Tuned</a>
       </div>
     </section>
 
@@ -210,5 +227,33 @@
     <div class="container footer-bottom"><span>© 2026 Ligeronex. All rights reserved.</span><span>Launching 18 December 2026.</span><a class="footer-social" href="https://www.linkedin.com/company/ligeronex" target="_blank" rel="noopener noreferrer" aria-label="Ligeronex on LinkedIn">LinkedIn ↗</a></div>
   </footer>
   <script src="script.js"></script>
+  <script>
+    (() => {
+      const target = new Date('2026-12-18T00:00:00');
+      const els = {
+        days: document.getElementById('count-days'),
+        hours: document.getElementById('count-hours'),
+        minutes: document.getElementById('count-minutes'),
+        seconds: document.getElementById('count-seconds')
+      };
+      const updateCountdown = () => {
+        const diff = target.getTime() - Date.now();
+        if (diff <= 0) {
+          els.days.textContent = 'LIVE';
+          els.hours.textContent = 'NOW';
+          els.minutes.textContent = 'GO';
+          els.seconds.textContent = '→';
+          return;
+        }
+        const total = Math.floor(diff / 1000);
+        els.days.textContent = String(Math.floor(total / 86400)).padStart(2, '0');
+        els.hours.textContent = String(Math.floor((total % 86400) / 3600)).padStart(2, '0');
+        els.minutes.textContent = String(Math.floor((total % 3600) / 60)).padStart(2, '0');
+        els.seconds.textContent = String(total % 60).padStart(2, '0');
+      };
+      updateCountdown();
+      setInterval(updateCountdown, 1000);
+    })();
+  </script>
 </body>
 </html>
