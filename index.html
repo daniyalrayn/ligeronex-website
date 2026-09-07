@@ -7,7 +7,7 @@
   <meta name="theme-color" content="#03142e" />
   <title>Ligeronex | Light. Intelligence. Beyond.</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
@@ -124,7 +124,7 @@
           <div class="launch-pill">The reveal is coming</div>
         </div>
         <div class="product-meta"><span>Built around real problems</span><span>Human-centred by design</span><span>Practical AI with purpose</span></div>
-        <a class="button button-primary" href="mailto:hello@ligeronex.com?subject=Ligeronex%20Launch">Stay Tuned</a>
+        <a class="button button-primary" href="mailto:ligenornex@gmail.com?subject=Ligeronex%20Launch">Stay Tuned</a>
       </div>
     </section>
 
@@ -202,58 +202,19 @@
     </section>
 
     <section class="resources">
-      <div class="container resources-inner reveal"><div><div class="eyebrow">STAY CLOSE</div><h2>Be here when we reveal what’s next.</h2><p>Our launch is scheduled for <strong>18 December 2026</strong>. Check back soon for the first look at what Ligeronex has been building.</p></div><a class="button button-outline-dark" href="mailto:hello@ligeronex.com?subject=Ligeronex%20Launch%20Updates">Stay Tuned</a></div>
-    </section>
-
-    <section class="faq">
-      <div class="container faq-grid">
-        <div class="section-title reveal"><div class="eyebrow">A FEW THINGS WE CAN SAY</div><h2>Questions you may have.</h2></div>
-        <div class="faq-list reveal">
-          <details><summary>What is Ligeronex building?</summary><p>We’re building a portfolio of practical AI products for modern organisations. We’ll share the details when we are ready.</p></details>
-          <details><summary>Can you tell us what the first product is?</summary><p>Not yet. We’re deliberately keeping the product details private until the launch. What we can say is that the focus is practical AI, human value and real organisational problems.</p></details>
-          <details><summary>When is the launch?</summary><p>The current launch date is <strong>18 December 2026</strong>.</p></details>
-          <details><summary>How can I stay updated?</summary><p>Bookmark this site and check back closer to launch. You can also contact Ligeronex through the Stay Tuned button on this page.</p></details>
-        </div>
+      <div class="container">
+        <div class="section-title centered reveal"><div class="eyebrow">STAY CLOSE</div><h2>18 December 2026.</h2><p>That’s when the next chapter begins. Until then, keep an eye on Ligeronex.</p></div>
+        <div class="resource-grid reveal"><div><span>Launch</span><b>18 December 2026</b></div><div><span>Focus</span><b>Practical AI</b></div><div><span>Principle</span><b>Human value</b></div></div>
       </div>
     </section>
 
-    <section class="cta">
-      <div class="container cta-inner reveal"><div><div class="eyebrow">18 DECEMBER 2026</div><h2>What’s next is almost here.</h2><p>Ligeronex is getting ready to reveal the next chapter. Come back on launch day and see what we’ve been building.</p></div><a class="button button-primary" href="mailto:hello@ligeronex.com?subject=Ligeronex%20Launch">Stay Tuned <span>→</span></a></div>
+    <section class="final-cta">
+      <div class="container final-cta-inner reveal"><div class="eyebrow">THE NEXT CHAPTER</div><h2>Light. Intelligence. Beyond.</h2><p>Something intelligent is taking shape. We’ll see you on 18 December 2026.</p><a class="button button-primary" href="mailto:ligenornex@gmail.com?subject=Ligeronex%20Launch">Stay Tuned <span>→</span></a></div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="container footer-top"><a class="brand" href="#top"><img class="brand-icon" src="assets/ligeronex-logo.jpg" alt="Ligeronex logo" /><span class="brand-word">LIGERONEX</span></a><p>Light. Intelligence. Beyond.</p><div><a href="#vision">Our Vision</a><a href="#about">About</a><a href="#launch">Launch</a><a href="mailto:hello@ligeronex.com">Contact</a><a href="https://www.linkedin.com/company/ligeronex" target="_blank" rel="noopener noreferrer" aria-label="Ligeronex on LinkedIn">LinkedIn</a></div></div>
-    <div class="container footer-bottom"><span>© 2026 Ligeronex. All rights reserved.</span><span>Launching 18 December 2026.</span><a class="footer-social" href="https://www.linkedin.com/company/ligeronex" target="_blank" rel="noopener noreferrer" aria-label="Ligeronex on LinkedIn">LinkedIn ↗</a></div>
-  </footer>
+  <footer class="site-footer"><div class="container footer-grid"><div><b>LIGERONEX</b><span>Light. Intelligence. Beyond.</span></div><div><span>Launching 18 December 2026</span><a href="mailto:ligenornex@gmail.com">ligenornex@gmail.com</a></div></div></footer>
+
   <script src="script.js"></script>
-  <script>
-    (() => {
-      const target = new Date('2026-12-18T00:00:00');
-      const els = {
-        days: document.getElementById('count-days'),
-        hours: document.getElementById('count-hours'),
-        minutes: document.getElementById('count-minutes'),
-        seconds: document.getElementById('count-seconds')
-      };
-      const updateCountdown = () => {
-        const diff = target.getTime() - Date.now();
-        if (diff <= 0) {
-          els.days.textContent = 'LIVE';
-          els.hours.textContent = 'NOW';
-          els.minutes.textContent = 'GO';
-          els.seconds.textContent = '→';
-          return;
-        }
-        const total = Math.floor(diff / 1000);
-        els.days.textContent = String(Math.floor(total / 86400)).padStart(2, '0');
-        els.hours.textContent = String(Math.floor((total % 86400) / 3600)).padStart(2, '0');
-        els.minutes.textContent = String(Math.floor((total % 3600) / 60)).padStart(2, '0');
-        els.seconds.textContent = String(total % 60).padStart(2, '0');
-      };
-      updateCountdown();
-      setInterval(updateCountdown, 1000);
-    })();
-  </script>
 </body>
 </html>
