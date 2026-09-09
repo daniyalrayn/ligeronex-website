@@ -67,4 +67,25 @@ document.addEventListener('DOMContentLoaded', () => {
   };
   window.addEventListener('scroll', updateNav, { passive: true });
   updateNav();
+
+  const launchTarget = new Date('2026-12-18T00:00:00');
+  const countdownIds = ['count-days', 'count-hours', 'count-minutes', 'count-seconds'];
+  const countdownEls = countdownIds.map((id) => document.getElementById(id));
+  const updateCountdown = () => {
+    if (countdownEls.some((el) => !el)) return;
+    let diff = launchTarget.getTime() - Date.now();
+    if (diff <= 0) {
+      countdownEls.forEach((el) => { el.textContent = '00'; });
+      return;
+    }
+    const days = Math.floor(diff / 86400000); diff %= 86400000;
+    const hours = Math.floor(diff / 3600000); diff %= 3600000;
+    const minutes = Math.floor(diff / 60000); diff %= 60000;
+    const seconds = Math.floor(diff / 1000);
+    [days, hours, minutes, seconds].forEach((value, index) => {
+      countdownEls[index].textContent = String(value).padStart(2, '0');
+    });
+  };
+  updateCountdown();
+  window.setInterval(updateCountdown, 1000);
 });
