@@ -49,20 +49,20 @@ body { overscroll-behavior-y: none; }
 .match-core span, .match-core small { transform:rotate(-30deg); }
 .match-core span { font:800 40px Manrope,sans-serif; letter-spacing:-.04em; }
 .match-core small { font-size:10px; color:#d4efff; }
-.match-node { position:absolute; min-width:72px; text-align:center; padding:10px 13px; border:1px solid rgba(78,188,255,.34); background:rgba(7,36,71,.72); backdrop-filter:blur(12px); color:#d9efff; font-size:11px; border-radius:8px; box-shadow:0 8px 30px rgba(0,0,0,.14); }
+.match-node { position:absolute; min-width:72px; text-align:center; padding:10px 13px; border:1px solid rgba(78,188,255,.34); background:rgba(7,36,71,.72); backdrop-filter:blur(12px); color:#d9efff; font-size:11px; border-radius:8px; box-shadow:0 8px 30px rgba(0,0,0,.14); will-change:transform,opacity; animation:nodeFloat 4.6s ease-in-out infinite; }
 .match-node:before { content:""; position:absolute; width:7px; height:7px; background:#55d7ff; box-shadow:0 0 14px rgba(85,215,255,.7); transform:rotate(30deg); }
-.node-a { top:10%; left:50%; transform:translateX(-50%); }
+.node-a { top:10%; left:50%; transform:translateX(-50%); animation-delay:0s; }
 .node-a:before { left:50%; bottom:-4px; margin-left:-3px; }
-.node-b { right:2%; top:48%; }
+.node-b { right:2%; top:48%; animation-delay:1.15s; }
 .node-b:before { left:-4px; top:50%; margin-top:-3px; }
-.node-c { bottom:10%; left:50%; transform:translateX(-50%); }
+.node-c { bottom:10%; left:50%; transform:translateX(-50%); animation-delay:2.3s; }
 .node-c:before { left:50%; top:-4px; margin-left:-3px; }
-.node-d { left:2%; top:48%; }
+.node-d { left:2%; top:48%; animation-delay:3.45s; }
 .node-d:before { right:-4px; top:50%; margin-top:-3px; }
 
-/* Ligeronex icon as the visual intelligence core. */
-.match-core.brand-core { overflow:hidden; }
-.brand-core img { width:74px; height:74px; object-fit:contain; border-radius:18px; transform:rotate(-30deg); filter:drop-shadow(0 0 10px rgba(92,220,255,.72)) drop-shadow(0 0 24px rgba(24,135,255,.42)); mix-blend-mode:screen; opacity:.98; }
+/* Use the full Ligeronex logo as the visual intelligence core. */
+.match-core.brand-core { overflow:hidden; padding:0; background:rgba(4,29,58,.94); }
+.brand-core img { width:120px; height:auto; max-width:92%; object-fit:contain; border-radius:14px; transform:rotate(-30deg); filter:drop-shadow(0 0 10px rgba(92,220,255,.72)) drop-shadow(0 0 24px rgba(24,135,255,.42)); mix-blend-mode:screen; opacity:.98; }
 .brand-core:after { content:""; position:absolute; inset:12px; border:1px solid rgba(120,225,255,.22); border-radius:34% 66% 34% 66% / 66% 34% 66% 34%; pointer-events:none; }
 
 /* Subtle honeycomb accents on cards without changing the clean editorial layout. */
@@ -72,11 +72,12 @@ body { overscroll-behavior-y: none; }
 @keyframes matchAura { 0%,100% { transform:scale(.96); opacity:.72; } 50% { transform:scale(1.04); opacity:1; } }
 @keyframes hexSpinA { from { transform:translate(-50%,-50%) rotate(30deg); } to { transform:translate(-50%,-50%) rotate(390deg); } }
 @keyframes hiveCore { 0%,100% { transform:rotate(30deg) scale(1); } 50% { transform:rotate(30deg) scale(1.035); } }
+@keyframes nodeFloat { 0%,100% { translate:0 0; opacity:.88; } 50% { translate:0 -8px; opacity:1; } }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .reveal { opacity:1; transform:none; transition:none; }
-  .hero-glow, .network-lines, .floating-chip, .floating-orb, .match-ring, .match-core, .matching-visual:before { animation:none !important; }
+  .hero-glow, .network-lines, .floating-chip, .floating-orb, .match-ring, .match-core, .matching-visual:before, .match-node { animation:none !important; }
 }
 @media (max-width: 760px) {
   html { scroll-padding-top:70px; }
@@ -88,5 +89,5 @@ body { overscroll-behavior-y: none; }
   .ring-b { width:250px; height:250px; }
   .ring-a { width:155px; height:155px; }
   .match-core { width:120px; height:120px; }
-  .brand-core img { width:62px; height:62px; }
+  .brand-core img { width:94px; }
 }
