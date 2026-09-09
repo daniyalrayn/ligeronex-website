@@ -6,6 +6,8 @@
   <meta name="description" content="Ligeronex builds practical AI products designed to bring clarity, intelligence and new possibilities to modern organisations. Something new is taking shape — launching 18 December 2026." />
   <meta name="theme-color" content="#03142e" />
   <title>Ligeronex | Light. Intelligence. Beyond.</title>
+  <link rel="icon" type="image/png" href="assets/ligeronex-icon.png" />
+  <link rel="apple-touch-icon" href="assets/ligeronex-icon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -202,58 +204,39 @@
     </section>
 
     <section class="resources">
-      <div class="container resources-inner reveal"><div><div class="eyebrow">STAY CLOSE</div><h2>Be here when we reveal what’s next.</h2><p>Our launch is scheduled for <strong>18 December 2026</strong>. Check back soon for the first look at what Ligeronex has been building.</p></div><a class="button button-outline-dark" href="mailto:info@ligeronex.com?subject=Ligeronex%20Launch%20Updates">Stay Tuned</a></div>
+      <div class="container resources-grid">
+        <div class="reveal"><div class="eyebrow">STAY CONNECTED</div><h2>Keep an eye on 18 December 2026.</h2><p>The next chapter of Ligeronex will be revealed on launch day.</p></div>
+        <div class="reveal resource-card"><span>LAUNCH</span><strong>18 December 2026</strong><a class="button button-outline" href="#launch">Explore the launch</a></div>
+      </div>
     </section>
 
     <section class="faq">
-      <div class="container faq-grid">
-        <div class="section-title reveal"><div class="eyebrow">A FEW THINGS WE CAN SAY</div><h2>Questions you may have.</h2></div>
-        <div class="faq-list reveal">
-          <details><summary>What is Ligeronex building?</summary><p>We’re building a portfolio of practical AI products for modern organisations. We’ll share the details when we are ready.</p></details>
-          <details><summary>Can you tell us what the first product is?</summary><p>Not yet. We’re deliberately keeping the product details private until the launch. What we can say is that the focus is practical AI, human value and real organisational problems.</p></details>
-          <details><summary>When is the launch?</summary><p>The current launch date is <strong>18 December 2026</strong>.</p></details>
-          <details><summary>How can I stay updated?</summary><p>Bookmark this site and check back closer to launch. You can also contact Ligeronex through the Stay Tuned button on this page.</p></details>
+      <div class="container">
+        <div class="section-title centered reveal"><div class="eyebrow">FAQ</div><h2>What is Ligeronex?</h2><p>Ligeronex is building practical AI products designed to solve real organisational problems and create useful human value.</p></div>
+        <div class="faq-grid">
+          <details class="faq-item reveal"><summary>When is the launch?</summary><p>18 December 2026.</p></details>
+          <details class="faq-item reveal"><summary>What are you launching?</summary><p>We’re keeping the product details under wraps for now. The focus is practical AI, human-centred experiences and meaningful organisational value.</p></details>
+          <details class="faq-item reveal"><summary>What does Ligeronex stand for?</summary><p><strong>Light. Intelligence. Beyond.</strong> We bring clarity, apply intelligence thoughtfully and build towards what comes next.</p></details>
+          <details class="faq-item reveal"><summary>How can I stay informed?</summary><p>Follow Ligeronex and check back closer to the launch date.</p></details>
         </div>
       </div>
     </section>
 
     <section class="cta">
-      <div class="container cta-inner reveal"><div><div class="eyebrow">18 DECEMBER 2026</div><h2>What’s next is almost here.</h2><p>Ligeronex is getting ready to reveal the next chapter. Come back on launch day and see what we’ve been building.</p></div><a class="button button-primary" href="mailto:info@ligeronex.com?subject=Ligeronex%20Launch">Stay Tuned <span>→</span></a></div>
+      <div class="container cta-inner reveal">
+        <div><div class="eyebrow">18 DECEMBER 2026</div><h2>Something intelligent is taking shape.</h2><p>Stay close. The next chapter of Ligeronex is coming.</p></div>
+        <a class="button button-primary" href="mailto:info@ligeronex.com?subject=Ligeronex%20Launch">Stay Tuned</a>
+      </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="container footer-top"><a class="brand" href="#top"><img class="brand-icon" src="assets/ligeronex-logo.jpg" alt="Ligeronex logo" /><span class="brand-word">LIGERONEX</span></a><p>Light. Intelligence. Beyond.</p><div><a href="#vision">Our Vision</a><a href="#about">About</a><a href="#launch">Launch</a><a href="mailto:info@ligeronex.com">Contact</a><a href="https://www.linkedin.com/company/ligeronex" target="_blank" rel="noopener noreferrer" aria-label="Ligeronex on LinkedIn">LinkedIn</a></div></div>
-    <div class="container footer-bottom"><span>© 2026 Ligeronex. All rights reserved.</span><span>Launching 18 December 2026.</span><a class="footer-social" href="https://www.linkedin.com/company/ligeronex" target="_blank" rel="noopener noreferrer" aria-label="Ligeronex on LinkedIn">LinkedIn ↗</a></div>
+    <div class="container footer-grid">
+      <div><strong>LIGERONEX</strong><span>Light. Intelligence. Beyond.</span></div>
+      <div><span>Launching 18 December 2026</span><a href="mailto:info@ligeronex.com">info@ligeronex.com</a></div>
+    </div>
   </footer>
+
   <script src="script.js"></script>
-  <script>
-    (() => {
-      const target = new Date('2026-12-18T00:00:00');
-      const els = {
-        days: document.getElementById('count-days'),
-        hours: document.getElementById('count-hours'),
-        minutes: document.getElementById('count-minutes'),
-        seconds: document.getElementById('count-seconds')
-      };
-      const updateCountdown = () => {
-        const diff = target.getTime() - Date.now();
-        if (diff <= 0) {
-          els.days.textContent = 'LIVE';
-          els.hours.textContent = 'NOW';
-          els.minutes.textContent = 'GO';
-          els.seconds.textContent = '→';
-          return;
-        }
-        const total = Math.floor(diff / 1000);
-        els.days.textContent = String(Math.floor(total / 86400)).padStart(2, '0');
-        els.hours.textContent = String(Math.floor((total % 86400) / 3600)).padStart(2, '0');
-        els.minutes.textContent = String(Math.floor((total % 3600) / 60)).padStart(2, '0');
-        els.seconds.textContent = String(total % 60).padStart(2, '0');
-      };
-      updateCountdown();
-      setInterval(updateCountdown, 1000);
-    })();
-  </script>
 </body>
 </html>
