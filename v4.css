@@ -1,4 +1,4 @@
-/* Ligeronex V4 — cinematic scrolling and launch emphasis. Existing styles remain untouched. */
+/* Ligeronex V5 — refined bee-hive / hexagonal intelligence visual language. Existing base styles remain intact. */
 html { scroll-behavior: smooth; scroll-padding-top: 82px; }
 body { overscroll-behavior-y: none; }
 .site-header { transition: background .35s ease, box-shadow .35s ease, backdrop-filter .35s ease; }
@@ -12,6 +12,8 @@ body { overscroll-behavior-y: none; }
 .intent-card.reveal:nth-child(4), .impact-card.reveal:nth-child(4) { transition-delay: .24s; }
 .intent-card.reveal:nth-child(5) { transition-delay: .32s; }
 .intent-card.reveal:nth-child(6) { transition-delay: .40s; }
+
+/* Launch / countdown */
 .launch-spotlight { padding: 46px 0; background: linear-gradient(180deg,#020e23,#061f3e); color:#fff; text-align:center; position:relative; overflow:hidden; }
 .launch-spotlight:before { content:""; position:absolute; inset:0; background:radial-gradient(circle at 50% 20%,rgba(47,184,255,.22),transparent 52%); pointer-events:none; }
 .launch-inner { position:relative; z-index:1; }
@@ -29,14 +31,56 @@ body { overscroll-behavior-y: none; }
 .launch-date-display span { display:block; font-size:.48em; letter-spacing:.16em; text-transform:uppercase; margin-bottom:12px; color:#58d5ff; background:none; -webkit-text-fill-color:#58d5ff; }
 .launch-pill { display:inline-flex; align-items:center; gap:8px; margin-top:20px; padding:9px 13px; border:1px solid rgba(87,211,255,.3); border-radius:999px; background:rgba(255,255,255,.04); color:#dff6ff; font-size:11px; font-weight:700; }
 .launch-pill:before { content:""; width:7px; height:7px; border-radius:50%; background:#4bd7ff; box-shadow:0 0 16px rgba(75,215,255,.8); }
+
+/* Refined bee-hive visual for the "Ahead of the launch" graphic. */
+.matching { position:relative; isolation:isolate; }
+.matching:before { content:""; position:absolute; inset:0; pointer-events:none; opacity:.22; background-image:radial-gradient(circle at 50% 50%, rgba(70,188,255,.14), transparent 34%), linear-gradient(30deg, transparent 48%, rgba(67,170,255,.07) 49%, transparent 50%), linear-gradient(150deg, transparent 48%, rgba(67,170,255,.07) 49%, transparent 50%); background-size:auto, 72px 124px, 72px 124px; mask-image:linear-gradient(90deg, transparent, #000 24%, #000 76%, transparent); z-index:-1; }
+.matching-visual { height:520px; position:relative; display:grid; place-items:center; overflow:hidden; }
+.matching-visual:before { content:""; position:absolute; width:430px; height:430px; border-radius:50%; background:radial-gradient(circle, rgba(22,135,255,.14), rgba(22,135,255,.03) 48%, transparent 72%); filter:blur(5px); animation:matchAura 5s ease-in-out infinite; }
+.matching-visual:after { content:""; position:absolute; inset:30px 0; background-image:radial-gradient(circle, rgba(78,206,255,.8) 0 1px, transparent 2px); background-size:36px 36px; opacity:.12; mask-image:radial-gradient(circle at center, #000 0%, transparent 70%); pointer-events:none; }
+.match-ring { position:absolute; left:50%; top:50%; border:1px solid rgba(57,176,255,.23); transform:translate(-50%,-50%); animation:spin 30s linear infinite; }
+.match-ring:before, .match-ring:after { content:""; position:absolute; width:10px; height:10px; border-radius:2px; transform:rotate(30deg); background:#4bd7ff; box-shadow:0 0 20px rgba(75,215,255,.55); }
+.match-ring:before { top:-5px; left:50%; margin-left:-5px; }
+.match-ring:after { right:-5px; top:50%; margin-top:-5px; }
+.ring-a { width:190px; height:190px; border-radius:28% 72% 28% 72% / 72% 28% 72% 28%; transform:translate(-50%,-50%) rotate(30deg); animation:hexSpinA 18s linear infinite; }
+.ring-b { width:320px; height:320px; border-radius:50%; border-style:dashed; animation-duration:28s; animation-direction:reverse; }
+.ring-c { width:450px; height:450px; border-radius:50%; opacity:.82; animation-duration:38s; }
+.match-core { width:150px; height:150px; border-radius:34% 66% 34% 66% / 66% 34% 66% 34%; transform:rotate(30deg); display:grid; place-items:center; align-content:center; background:radial-gradient(circle at 35% 30%, #1ca2ff, #07549e 58%, #052a55 100%); border:1px solid #63ddff; box-shadow:0 0 75px rgba(25,144,255,.42), inset 0 0 35px rgba(72,210,255,.15); z-index:2; animation:hiveCore 4s ease-in-out infinite; }
+.match-core span, .match-core small { transform:rotate(-30deg); }
+.match-core span { font:800 40px Manrope,sans-serif; letter-spacing:-.04em; }
+.match-core small { font-size:10px; color:#d4efff; }
+.match-node { position:absolute; min-width:72px; text-align:center; padding:10px 13px; border:1px solid rgba(78,188,255,.34); background:rgba(7,36,71,.72); backdrop-filter:blur(12px); color:#d9efff; font-size:11px; border-radius:8px; box-shadow:0 8px 30px rgba(0,0,0,.14); }
+.match-node:before { content:""; position:absolute; width:7px; height:7px; background:#55d7ff; box-shadow:0 0 14px rgba(85,215,255,.7); transform:rotate(30deg); }
+.node-a { top:10%; left:50%; transform:translateX(-50%); }
+.node-a:before { left:50%; bottom:-4px; margin-left:-3px; }
+.node-b { right:2%; top:48%; }
+.node-b:before { left:-4px; top:50%; margin-top:-3px; }
+.node-c { bottom:10%; left:50%; transform:translateX(-50%); }
+.node-c:before { left:50%; top:-4px; margin-left:-3px; }
+.node-d { left:2%; top:48%; }
+.node-d:before { right:-4px; top:50%; margin-top:-3px; }
+
+/* Subtle honeycomb accents on cards without changing the clean editorial layout. */
+.intent-card, .product-card, .impact-card { position:relative; overflow:hidden; }
+.intent-card:after, .product-card:after, .impact-card:after { content:""; position:absolute; width:90px; height:78px; right:-28px; bottom:-28px; opacity:.035; border:1px solid currentColor; clip-path:polygon(25% 3%,75% 3%,100% 50%,75% 97%,25% 97%,0 50%); pointer-events:none; }
+
+@keyframes matchAura { 0%,100% { transform:scale(.96); opacity:.72; } 50% { transform:scale(1.04); opacity:1; } }
+@keyframes hexSpinA { from { transform:translate(-50%,-50%) rotate(30deg); } to { transform:translate(-50%,-50%) rotate(390deg); } }
+@keyframes hiveCore { 0%,100% { transform:rotate(30deg) scale(1); } 50% { transform:rotate(30deg) scale(1.035); } }
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .reveal { opacity:1; transform:none; transition:none; }
-  .hero-glow, .network-lines, .floating-chip, .floating-orb, .match-ring, .match-core { animation:none !important; }
+  .hero-glow, .network-lines, .floating-chip, .floating-orb, .match-ring, .match-core, .matching-visual:before { animation:none !important; }
 }
 @media (max-width: 760px) {
   html { scroll-padding-top:70px; }
   .launch-date { font-size:38px; }
   .countdown-unit { min-width:64px; }
   .product-band { padding:64px 0; }
+  .matching-visual { height:440px; }
+  .ring-c { width:350px; height:350px; }
+  .ring-b { width:250px; height:250px; }
+  .ring-a { width:155px; height:155px; }
+  .match-core { width:120px; height:120px; }
 }
